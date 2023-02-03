@@ -9,10 +9,6 @@ import UIKit
 import SwiftUI
 
 class HomeViewController: UIViewController {
-// MARK: - PROPERTIES
-    
-    
-// MARK: - LIFECICLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +17,6 @@ class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(didTapSettings))
         fetchData()
     }
-
-// MARK: - FUNCTIONS
     
     @objc func didTapSettings() {
         let vc  = SettingsViewController()
