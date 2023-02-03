@@ -8,11 +8,7 @@
 import UIKit
 import SwiftUI
 
-// MARK: - MAIN
-
-class WelcomeViewController: UIViewController {
-    
-// MARK: - PROPERTIES
+class WelcomeViewController: UIViewController { 
     
     private let signInButton: UIButton = {
         let button = UIButton()
@@ -21,8 +17,6 @@ class WelcomeViewController: UIViewController {
         button.setTitleColor(.blue, for: .normal)
         return button
     }()
-    
-// MARK: - LIFECYCLES
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +37,6 @@ class WelcomeViewController: UIViewController {
         )
     }
     
-// MARK: - FUNCTIONS
-    
-    // Handle tapping on "#signInButton"
     @objc func didTapSignIn() {
         let vc = AuthViewController()
         vc.completionHandler = { [weak self] success in
@@ -58,10 +49,8 @@ class WelcomeViewController: UIViewController {
         
     }
     
-    //Open main page
     private func handleSignIn(success: Bool) {
         
-        //If Sign-in went wrong
         guard success else {
             let alert = UIAlertController(title: "Oops", message: "Something went wrong", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
@@ -69,7 +58,6 @@ class WelcomeViewController: UIViewController {
             return
         }
         
-        //Sign-in is successful. Present it
         let mainAppTabBarVC = TabBarViewController()
         mainAppTabBarVC.modalPresentationStyle = .fullScreen
         present(mainAppTabBarVC, animated: true)
