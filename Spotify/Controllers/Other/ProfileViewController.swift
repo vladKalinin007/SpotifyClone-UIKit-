@@ -9,14 +9,7 @@ import SDWebImage
 import UIKit
 import SwiftUI
 
-
-// MARK: - MAIN
-
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    
-    
-// MARK: - PROPERTIES & STATES
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -26,8 +19,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }()
     
     private var models = [String]()
-    
-// MARK: - LIFECYCLES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +36,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.frame = view.bounds
     }
     
-// MARK: - FUNCTIONS
-    
-    // Fetch for profile
     private func fetchProfile() {
         APICaller.shared.getCurrentUserProfile { [weak self] result in
             DispatchQueue.main.async {
