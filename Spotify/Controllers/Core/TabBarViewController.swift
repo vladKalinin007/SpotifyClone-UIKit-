@@ -7,15 +7,7 @@
 import SwiftUI
 import UIKit
 
-// MARK: - MAIN
-
 class TabBarViewController: UITabBarController {
-    
-// MARK: - PROPERTIES
-    
-    
-    
-// MARK: - LIFECYCLES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +57,7 @@ class TabBarViewController: UITabBarController {
         setViewControllers([nav1, nav2, nav3], animated: false)
         
         
-    }
-    
-// MARK: - FUNCTIONS
-    
-    
-    
+    }  
 }
 
 // MARK: - PREVIEW
