@@ -9,13 +9,8 @@ import UIKit
 import WebKit
 import SwiftUI
 
-// MARK: - MAIN
-
 class AuthViewController: UIViewController, WKNavigationDelegate {
-    
-// MARK: - PROPERTIES
-    
-    // WebView an. closure
+
     private let webView: WKWebView = {
         let prefs = WKWebpagePreferences()
         prefs.allowsContentJavaScript = true
@@ -26,8 +21,6 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
     }()
     
     public var completionHandler: ((Bool) -> Void)?
-    
-// MARK: - LIFECYCLES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +37,6 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLayoutSubviews()
         webView.frame = view.bounds
     }
-    
-// MARK: - FUNCTIONS
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         guard let url = webView.url else { return }
