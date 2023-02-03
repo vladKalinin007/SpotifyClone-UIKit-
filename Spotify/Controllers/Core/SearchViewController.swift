@@ -7,27 +7,13 @@
 
 import UIKit
 
-// MARK: - MAIN
-
 class SearchViewController: UIViewController {
     
-// MARK: - PROPERTIES
-    
-    
-    
-// MARK: - LIFECYCLES
-    
-    // MARK: View is loaded into memory
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Search"
         view.backgroundColor = .systemBackground
         
-    }
-    
-// MARK: - FUNCTIONS
-    
-    
-    
+    }  
 }
