@@ -8,13 +8,7 @@
 import UIKit
 import SwiftUI
 
-// MARK: - MAIN
-
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    
-    
-// MARK: - PROPERTIES
     
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -23,8 +17,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }()
     
     private var sections = [Section]()
-    
-// MARK: - LIFECYCLES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +33,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
-    
-// MARK: - FUNCTIONS
-    
+
     private func configureModels() {
         
         sections.append(Section(title: "Profile", options: [Option(title: "View Your profile",
