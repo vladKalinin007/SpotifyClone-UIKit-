@@ -7,26 +7,12 @@
 
 import UIKit
 
-// MARK: - MAIN
-
 class PlayerViewController: UIViewController {
     
-// MARK: - PROPERTIES
-    
-    
-    
-// MARK: - LIFECYCLES
-    
-    // MARK: View is loaded into memory
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         
     }
-    
-// MARK: - FUNCTIONS
-    
-    
-    
 }
