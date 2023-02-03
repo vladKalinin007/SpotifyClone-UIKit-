@@ -8,7 +8,6 @@
 import Foundation
 
 final class APICaller {
-// MARK: - PROPERTIES
     
     static let shared = APICaller()
     
@@ -29,8 +28,6 @@ final class APICaller {
     private init() {
         
     }
-    
-// MARK: - FUNCTIONS
     
     public func getCurrentUserProfile(completion: @escaping (Result<UserProfile, Error>) -> Void) {
         createRequest(
