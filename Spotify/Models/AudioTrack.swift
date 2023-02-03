@@ -10,7 +10,6 @@ import Foundation
 class anyclass {
     
     func upload(result: Double, completion: @escaping (String) -> Void) {
-        // More complex networking code; we'll just send back "OK"
         DispatchQueue.global().async {
             completion("OK")
         }
