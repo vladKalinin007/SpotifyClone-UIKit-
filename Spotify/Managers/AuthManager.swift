@@ -8,9 +8,6 @@
 import Foundation
 
 final class AuthManager {
-// MARK: - PROPERTIES
-    
-    // MARK: External properties:
     
     struct Constants {
         static let clientID = "27d4aa5c3c1e4eb68f12d33b03b3e27c"
@@ -33,8 +30,6 @@ final class AuthManager {
     var isSignedIn: Bool {
         return accessToken != nil
     }
-    
-    // MARK: Internal properties:
     
     private var refreshingToken = false
     
@@ -60,22 +55,14 @@ final class AuthManager {
     
     private var onRefreshBlocks = [((String) -> Void)]()
     
-// MARK: - LIFECYCLE
-    
     private init() {
         
     }
     
-// MARK: - FUNCTIONS
-    
-    // MARK: External functions:
-    
     public func exchangeCodeForToken(code: String, completion: @escaping (Bool) -> Void) {
         
-        // UNWRAP URL
         guard let url = URL(string: Constants.tokenAPIURL) else { return }
         
-        // COMPOSE REQ. BODY PARAMS
         var components = URLComponents()
         components.queryItems = [
             
@@ -89,7 +76,6 @@ final class AuthManager {
                          value: Constants.redirectURI)
         ]
         
-        // COMPOSE REQUEST
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -106,7 +92,6 @@ final class AuthManager {
         
         request.setValue("Basic \(base64String)", forHTTPHeaderField: "Authorization")
         
-        // MAKE REQUEST ACCESS TOKEN
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
             
             guard let data = data, error == nil else {
@@ -218,8 +203,6 @@ final class AuthManager {
         
         task.resume()
     }
-    
-    // MARK: Internal functions:
     
     //CACHE FETCHED DATA BY MODEL
     private func cacheToken(result: AuthResponse) {
